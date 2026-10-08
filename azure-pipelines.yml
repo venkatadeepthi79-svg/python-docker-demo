@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  name: mynew-pool
+  name: my-agent
 
 steps:
 - script: echo Hello, world!
@@ -15,12 +15,5 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'docker build -t shaikmustafa/azurerepo:v2 .'
-
-- task: Docker@2
-  inputs:
-    containerRegistry: 'mydockerhub-connection'
-    repository: 'shaikmustafa/azurerepo'
-    command: 'push'
-    tags: 'v2'
+    script: 'docker build -t myimage .'
 
