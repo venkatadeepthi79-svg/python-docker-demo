@@ -15,10 +15,11 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'docker build --no-cache -t myimage .'
+    script: 'docker build --no-cache -t venkatadeepthi/azure-repo:v1 .'
 
 - task: Docker@2
   inputs:
     containerRegistry: 'docker-connection'
-    repository: 'Azure-repo'
+    repository: 'venkatadeepthi/azure-repo'
     command: 'push'
+    tags: 'v1'
