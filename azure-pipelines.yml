@@ -22,6 +22,3 @@ steps:
     containerRegistry: 'docker-connection'
     repository: 'Azure-repo'
     command: 'push'
-- task: CmdLine@2
-  inputs:
-    script: 'docker run -d --name python-cont -p 1234:8000 myimage'
